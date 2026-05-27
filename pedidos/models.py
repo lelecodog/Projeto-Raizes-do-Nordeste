@@ -2,9 +2,7 @@ from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 from django.utils import timezone
 
-# ---------------------------
-# Usuario
-# ---------------------------
+# Usuario (com perfis: cliente, atendente, gerente, admin)
 class Usuario(models.Model):
     PERFIS = [
         ("CLIENTE", "Cliente"),
@@ -41,9 +39,7 @@ class Usuario(models.Model):
         return f"{self.nome} ({self.perfil})"
 
 
-# ---------------------------
 # Unidade
-# ---------------------------
 class Unidade(models.Model):
     id_unidade = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
@@ -61,9 +57,7 @@ class Unidade(models.Model):
         return self.nome
 
 
-# ---------------------------
 # Produto
-# ---------------------------
 class Produto(models.Model):
     id_produto = models.AutoField(primary_key=True)
     unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE, related_name="produtos")
@@ -84,9 +78,7 @@ class Produto(models.Model):
         return self.nome
 
 
-# ---------------------------
 # ItemPedido
-# ---------------------------
 class ItemPedido(models.Model):
     id_item = models.AutoField(primary_key=True)
     pedido = models.ForeignKey("Pedido", on_delete=models.CASCADE, related_name="itens")
@@ -101,9 +93,7 @@ class ItemPedido(models.Model):
         return f"Item {self.produto.nome} (x{self.quantidade})"
 
 
-# ---------------------------
 # Pedido
-# ---------------------------
 class Pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="pedidos")
@@ -130,9 +120,7 @@ class Pedido(models.Model):
         return f"Pedido {self.id_pedido} - {self.usuario.nome}"
 
 
-# ---------------------------
 # Promocao
-# ---------------------------
 class Promocao(models.Model):
     id_promocao = models.AutoField(primary_key=True)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name="promocoes")
@@ -158,9 +146,7 @@ class Promocao(models.Model):
         return f"Promoção {self.descricao}"
 
 
-# ---------------------------
 # Pagamento
-# ---------------------------
 class Pagamento(models.Model):
     id_pagamento = models.AutoField(primary_key=True)
     pedido = models.OneToOneField(Pedido, on_delete=models.CASCADE, related_name="pagamento")
@@ -187,9 +173,7 @@ class Pagamento(models.Model):
         return f"Pagamento {self.id_pagamento} - {self.status}"
 
 
-# ---------------------------
 # Fidelizacao
-# ---------------------------
 class Fidelizacao(models.Model):
     id_fidelizacao = models.AutoField(primary_key=True)
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, related_name="fidelizacao")
@@ -212,9 +196,7 @@ class Fidelizacao(models.Model):
         return f"Fidelização de {self.usuario.nome}"
 
 
-# ---------------------------
 # LogAuditoria
-# ---------------------------
 class LogAuditoria(models.Model):
     id_log = models.AutoField(primary_key=True)
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name="logs")
