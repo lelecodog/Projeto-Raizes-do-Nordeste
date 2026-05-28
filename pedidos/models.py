@@ -99,7 +99,7 @@ class Pedido(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="pedidos")
     data = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=30, default="AGUARDANDO_PAGAMENTO")
-    canal = models.CharField(max_length=20)
+    canalPedido = models.CharField(max_length=20)
 
     def adicionarItem(self, item):
         item.pedido = self

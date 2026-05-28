@@ -35,17 +35,33 @@ class ItemPedidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ItemPedido
-        fields = ['id_item', 'pedido', 'produto', 'quantidade', 'valor_unitario']
+        fields = ['id_item', 'produto', 'quantidade', 'valor_unitario']
 
 
-# Pedido
+# Pedido (resposta completa)
 class PedidoSerializer(serializers.ModelSerializer):
     usuario = UsuarioSerializer(read_only=True)
     itens = ItemPedidoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Pedido
-        fields = ['id_pedido', 'usuario', 'data', 'status', 'canal', 'itens']
+        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens']
+
+
+# Pedido (entrada para criação)
+class ItemPedidoInputSerializer(serializers.Serializer):
+    produtoId = serializers.IntegerField()
+    quantidade = serializers.IntegerField(default=1)
+
+class PedidoCreateSerializer(serializers.ModelSerializer):
+    clienteId = serializers.IntegerField()
+    canalPedido = serializers.CharField()
+    formaPagamento = serializers.CharField(default="MOCK")
+    itens = ItemPedidoInputSerializer(many=True)
+
+    class Meta:
+        model = Pedido
+        fields = ["clienteId", "canalPedido", "formaPagamento", "itens"]
 
 
 # Promocao
@@ -82,3 +98,4 @@ class LogAuditoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = LogAuditoria
         fields = ['id_log', 'pedido', 'acao', 'timestamp', 'usuario_responsavel']
+

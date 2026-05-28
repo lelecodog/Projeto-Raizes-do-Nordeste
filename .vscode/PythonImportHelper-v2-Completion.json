@@ -1,0 +1,720 @@
+[
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "make_password",
+        "importPath": "django.contrib.auth.hashers",
+        "description": "django.contrib.auth.hashers",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.hashers",
+        "documentation": {}
+    },
+    {
+        "label": "check_password",
+        "importPath": "django.contrib.auth.hashers",
+        "description": "django.contrib.auth.hashers",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.hashers",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "get_schema_view",
+        "importPath": "drf_yasg.views",
+        "description": "drf_yasg.views",
+        "isExtraImport": true,
+        "detail": "drf_yasg.views",
+        "documentation": {}
+    },
+    {
+        "label": "openapi",
+        "importPath": "drf_yasg",
+        "description": "drf_yasg",
+        "isExtraImport": true,
+        "detail": "drf_yasg",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "pedidos.migrations.0001_initial",
+        "description": "pedidos.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Pedido',\n            fields=[\n                ('id_pedido', models.AutoField(primary_key=True, serialize=False)),\n                ('data', models.DateTimeField(default=django.utils.timezone.now)),",
+        "detail": "pedidos.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "pedidos.migrations.0002_rename_id_usuario_fidelizacao_usuario_and_more",
+        "description": "pedidos.migrations.0002_rename_id_usuario_fidelizacao_usuario_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pedidos', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='fidelizacao',\n            old_name='id_usuario',\n            new_name='usuario',\n        ),",
+        "detail": "pedidos.migrations.0002_rename_id_usuario_fidelizacao_usuario_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "pedidos.migrations.0003_rename_canal_pedido_canalpedido",
+        "description": "pedidos.migrations.0003_rename_canal_pedido_canalpedido",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('pedidos', '0002_rename_id_usuario_fidelizacao_usuario_and_more'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='pedido',\n            old_name='canal',\n            new_name='canalPedido',\n        ),",
+        "detail": "pedidos.migrations.0003_rename_canal_pedido_canalpedido",
+        "documentation": {}
+    },
+    {
+        "label": "PedidosConfig",
+        "kind": 6,
+        "importPath": "pedidos.apps",
+        "description": "pedidos.apps",
+        "peekOfCode": "class PedidosConfig(AppConfig):\n    name = 'pedidos'",
+        "detail": "pedidos.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Usuario",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Usuario(models.Model):\n    PERFIS = [\n        (\"CLIENTE\", \"Cliente\"),\n        (\"ATENDENTE\", \"Atendente\"),\n        (\"GERENTE\", \"Gerente\"),\n        (\"ADMIN\", \"Admin\"),\n    ]\n    id_usuario = models.AutoField(primary_key=True)\n    nome = models.CharField(max_length=100)\n    email = models.EmailField(unique=True)",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Unidade",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Unidade(models.Model):\n    id_unidade = models.AutoField(primary_key=True)\n    nome = models.CharField(max_length=100)\n    endereco = models.CharField(max_length=200)\n    telefone = models.CharField(max_length=20)\n    estoque = models.IntegerField(default=0)\n    def gerarEstoque(self):\n        return self.estoque\n    def listarProduto(self):\n        return self.produtos.all()",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Produto",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Produto(models.Model):\n    id_produto = models.AutoField(primary_key=True)\n    unidade = models.ForeignKey(Unidade, on_delete=models.CASCADE, related_name=\"produtos\")\n    nome = models.CharField(max_length=100)\n    categoria = models.CharField(max_length=50)\n    preco = models.DecimalField(max_digits=10, decimal_places=2)\n    ativo = models.BooleanField(default=True)\n    def aplicarPromocao(self, promocao):\n        if promocao.validarValidade():\n            self.preco -= promocao.desconto",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "ItemPedido",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class ItemPedido(models.Model):\n    id_item = models.AutoField(primary_key=True)\n    pedido = models.ForeignKey(\"Pedido\", on_delete=models.CASCADE, related_name=\"itens\")\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)\n    quantidade = models.IntegerField()\n    valor_unitario = models.DecimalField(max_digits=10, decimal_places=2)\n    def calcularSubtotal(self):\n        return self.quantidade * self.valor_unitario\n    def __str__(self):\n        return f\"Item {self.produto.nome} (x{self.quantidade})\"",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Pedido",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Pedido(models.Model):\n    id_pedido = models.AutoField(primary_key=True)\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name=\"pedidos\")\n    data = models.DateTimeField(default=timezone.now)\n    status = models.CharField(max_length=30, default=\"AGUARDANDO_PAGAMENTO\")\n    canalPedido = models.CharField(max_length=20)\n    def adicionarItem(self, item):\n        item.pedido = self\n        item.save()\n    def calcularTotal(self):",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Promocao",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Promocao(models.Model):\n    id_promocao = models.AutoField(primary_key=True)\n    produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name=\"promocoes\")\n    descricao = models.CharField(max_length=200)\n    desconto = models.DecimalField(max_digits=5, decimal_places=2)\n    validade = models.DateField()\n    ativo = models.BooleanField(default=True)\n    def aplicarEmProduto(self, produto):\n        if self.validarValidade():\n            produto.aplicarPromocao(self)",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Pagamento",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Pagamento(models.Model):\n    id_pagamento = models.AutoField(primary_key=True)\n    pedido = models.OneToOneField(Pedido, on_delete=models.CASCADE, related_name=\"pagamento\")\n    valor = models.DecimalField(max_digits=10, decimal_places=2)\n    data = models.DateTimeField(default=timezone.now)\n    status = models.CharField(max_length=20, default=\"PENDENTE\")\n    def processarPagamento(self):\n        # Simulação de processamento\n        self.status = \"PROCESSANDO\"\n        self.save()",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Fidelizacao",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class Fidelizacao(models.Model):\n    id_fidelizacao = models.AutoField(primary_key=True)\n    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, related_name=\"fidelizacao\")\n    saldo_ponto = models.IntegerField(default=0)\n    historico = models.TextField(blank=True)\n    def acumularPontos(self, valorPedido):\n        pontos = int(valorPedido // 10)  # exemplo: 1 ponto a cada 10 reais\n        self.saldo_ponto += pontos\n        self.save()\n    def resgatarPontos(self, qtdPontos):",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "LogAuditoria",
+        "kind": 6,
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "peekOfCode": "class LogAuditoria(models.Model):\n    id_log = models.AutoField(primary_key=True)\n    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name=\"logs\")\n    acao = models.CharField(max_length=100)\n    timestamp = models.DateTimeField(default=timezone.now)\n    usuario_responsavel = models.CharField(max_length=100)\n    def registrarAcao(self, acao, usuario):\n        self.acao = acao\n        self.usuario_responsavel = usuario\n        self.save()",
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "UsuarioSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class UsuarioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = ['id_usuario', 'nome', 'email', 'perfil']\n# Unidade\nclass UnidadeSerializer(serializers.ModelSerializer):\n    produtos = serializers.StringRelatedField(many=True, read_only=True)\n    class Meta:\n        model = Unidade\n        fields = ['id_unidade', 'nome', 'endereco', 'telefone', 'estoque', 'produtos']",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UnidadeSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class UnidadeSerializer(serializers.ModelSerializer):\n    produtos = serializers.StringRelatedField(many=True, read_only=True)\n    class Meta:\n        model = Unidade\n        fields = ['id_unidade', 'nome', 'endereco', 'telefone', 'estoque', 'produtos']\n# Produto\nclass ProdutoSerializer(serializers.ModelSerializer):\n    unidade = serializers.StringRelatedField()\n    class Meta:\n        model = Produto",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ProdutoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class ProdutoSerializer(serializers.ModelSerializer):\n    unidade = serializers.StringRelatedField()\n    class Meta:\n        model = Produto\n        fields = ['id_produto', 'nome', 'categoria', 'preco', 'ativo', 'unidade']\n# ItemPedido\nclass ItemPedidoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = ItemPedido",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ItemPedidoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class ItemPedidoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = ItemPedido\n        fields = ['id_item', 'produto', 'quantidade', 'valor_unitario']\n# Pedido (resposta completa)\nclass PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    class Meta:",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PedidoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    class Meta:\n        model = Pedido\n        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens']\n# Pedido (entrada para criação)\nclass ItemPedidoInputSerializer(serializers.Serializer):\n    produtoId = serializers.IntegerField()\n    quantidade = serializers.IntegerField(default=1)",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ItemPedidoInputSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class ItemPedidoInputSerializer(serializers.Serializer):\n    produtoId = serializers.IntegerField()\n    quantidade = serializers.IntegerField(default=1)\nclass PedidoCreateSerializer(serializers.ModelSerializer):\n    clienteId = serializers.IntegerField()\n    canalPedido = serializers.CharField()\n    formaPagamento = serializers.CharField(default=\"MOCK\")\n    itens = ItemPedidoInputSerializer(many=True)\n    class Meta:\n        model = Pedido",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PedidoCreateSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class PedidoCreateSerializer(serializers.ModelSerializer):\n    clienteId = serializers.IntegerField()\n    canalPedido = serializers.CharField()\n    formaPagamento = serializers.CharField(default=\"MOCK\")\n    itens = ItemPedidoInputSerializer(many=True)\n    class Meta:\n        model = Pedido\n        fields = [\"clienteId\", \"canalPedido\", \"formaPagamento\", \"itens\"]\n# Promocao\nclass PromocaoSerializer(serializers.ModelSerializer):",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PromocaoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class PromocaoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = Promocao\n        fields = ['id_promocao', 'descricao', 'desconto', 'validade', 'ativo', 'produto']\n# Pagamento\nclass PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = Pagamento",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PagamentoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = Pagamento\n        fields = ['id_pagamento', 'pedido', 'valor', 'data', 'status']\n# Fidelizacao\nclass FidelizacaoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    class Meta:\n        model = Fidelizacao",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "FidelizacaoSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class FidelizacaoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    class Meta:\n        model = Fidelizacao\n        fields = ['id_fidelizacao', 'usuario', 'saldo_ponto', 'historico']\n# LogAuditoria\nclass LogAuditoriaSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = LogAuditoria",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "LogAuditoriaSerializer",
+        "kind": 6,
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "peekOfCode": "class LogAuditoriaSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = LogAuditoria\n        fields = ['id_log', 'pedido', 'acao', 'timestamp', 'usuario_responsavel']",
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "pedidos.urls",
+        "description": "pedidos.urls",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'pedidos', PedidoViewSet, basename='pedido')\nurlpatterns = [\n    path('', include(router.urls)),\n]",
+        "detail": "pedidos.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "pedidos.urls",
+        "description": "pedidos.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n]",
+        "detail": "pedidos.urls",
+        "documentation": {}
+    },
+    {
+        "label": "PedidoViewSet",
+        "kind": 6,
+        "importPath": "pedidos.views",
+        "description": "pedidos.views",
+        "peekOfCode": "class PedidoViewSet(viewsets.ModelViewSet):\n    queryset = Pedido.objects.all()\n    def get_serializer_class(self):\n        # Usa PedidoCreateSerializer no POST, PedidoSerializer nos demais\n        if self.action == 'create':\n            return PedidoCreateSerializer\n        return PedidoSerializer\n    def create(self, request, *args, **kwargs):\n        serializer = PedidoCreateSerializer(data=request.data)\n        if not serializer.is_valid():",
+        "detail": "pedidos.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "pedidos_api.asgi",
+        "description": "pedidos_api.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "pedidos_api.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-8m$4a3p4o0-e=lq*6*ewtp=sc0ijc52i$1$cu#i0d1g8z86c_j'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-8m$4a3p4o0-e=lq*6*ewtp=sc0ijc52i$1$cu#i0d1g8z86c_j'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'pedidos',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'pedidos',\n    'rest_framework',\n    'drf_yasg',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'pedidos_api.urls'",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "ROOT_URLCONF = 'pedidos_api.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'pedidos_api.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/6.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'pt-br'\nTIME_ZONE = 'America/Sao_Paulo'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "TIME_ZONE = 'America/Sao_Paulo'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/6.0/howto/static-files/\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',\n    ],",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',\n    ],\n    'DEFAULT_RENDERER_CLASSES': [\n        'rest_framework.renderers.JSONRenderer',\n        'rest_framework.renderers.BrowsableAPIRenderer',  # habilita interface web",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Configuração DRF \nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',\n    ],\n    'DEFAULT_RENDERER_CLASSES': [\n        'rest_framework.renderers.JSONRenderer',\n        'rest_framework.renderers.BrowsableAPIRenderer',  # habilita interface web\n    ]",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "pedidos_api.settings",
+        "description": "pedidos_api.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',\n    ],\n    'DEFAULT_RENDERER_CLASSES': [\n        'rest_framework.renderers.JSONRenderer',\n        'rest_framework.renderers.BrowsableAPIRenderer',  # habilita interface web\n    ]\n}",
+        "detail": "pedidos_api.settings",
+        "documentation": {}
+    },
+    {
+        "label": "schema_view",
+        "kind": 5,
+        "importPath": "pedidos_api.urls",
+        "description": "pedidos_api.urls",
+        "peekOfCode": "schema_view = get_schema_view(\n    openapi.Info(\n        title=\"API Pedidos\",\n        default_version='v1',\n        description=\"Documentação da API de Pedidos\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"suporte@raizesdonordeste.com\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,",
+        "detail": "pedidos_api.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "pedidos_api.urls",
+        "description": "pedidos_api.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', lambda request: HttpResponseRedirect('/swagger/')),\n    path('admin/', admin.site.urls),\n    path('api/', include('pedidos.urls')),\n    # Rotas Swagger e ReDoc\n    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),\n]",
+        "detail": "pedidos_api.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "pedidos_api.wsgi",
+        "description": "pedidos_api.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "pedidos_api.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pedidos_api.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]
