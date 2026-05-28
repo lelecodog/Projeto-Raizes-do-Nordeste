@@ -106,6 +106,14 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -268,6 +276,87 @@
         "documentation": {}
     },
     {
+        "label": "django",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django",
+        "description": "django",
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "Usuario",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Unidade",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Produto",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Pedido",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "ItemPedido",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Promocao",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Pagamento",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "Fidelizacao",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
+        "label": "LogAuditoria",
+        "importPath": "pedidos.models",
+        "description": "pedidos.models",
+        "isExtraImport": true,
+        "detail": "pedidos.models",
+        "documentation": {}
+    },
+    {
         "label": "Migration",
         "kind": 6,
         "importPath": "pedidos.migrations.0001_initial",
@@ -416,7 +505,7 @@
         "kind": 6,
         "importPath": "pedidos.serializers",
         "description": "pedidos.serializers",
-        "peekOfCode": "class ItemPedidoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = ItemPedido\n        fields = ['id_item', 'produto', 'quantidade', 'valor_unitario']\n# Pedido (resposta completa)\nclass PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    class Meta:",
+        "peekOfCode": "class ItemPedidoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = ItemPedido\n        fields = ['id_item', 'produto', 'quantidade', 'valor_unitario']\n# Pedido (resposta completa)\nclass PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    total = serializers.SerializerMethodField()",
         "detail": "pedidos.serializers",
         "documentation": {}
     },
@@ -425,7 +514,7 @@
         "kind": 6,
         "importPath": "pedidos.serializers",
         "description": "pedidos.serializers",
-        "peekOfCode": "class PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    class Meta:\n        model = Pedido\n        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens']\n# Pedido (entrada para criação)\nclass ItemPedidoInputSerializer(serializers.Serializer):\n    produtoId = serializers.IntegerField()\n    quantidade = serializers.IntegerField(default=1)",
+        "peekOfCode": "class PedidoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    itens = ItemPedidoSerializer(many=True, read_only=True)\n    total = serializers.SerializerMethodField()\n    class Meta:\n        model = Pedido\n        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens', 'total']\n    def get_total(self, obj):\n        return obj.calcularTotal()\n# Pedido (entrada para criação)",
         "detail": "pedidos.serializers",
         "documentation": {}
     },
@@ -452,7 +541,7 @@
         "kind": 6,
         "importPath": "pedidos.serializers",
         "description": "pedidos.serializers",
-        "peekOfCode": "class PromocaoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = Promocao\n        fields = ['id_promocao', 'descricao', 'desconto', 'validade', 'ativo', 'produto']\n# Pagamento\nclass PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = Pagamento",
+        "peekOfCode": "class PromocaoSerializer(serializers.ModelSerializer):\n    produto = ProdutoSerializer(read_only=True)\n    class Meta:\n        model = Promocao\n        fields = ['id_promocao', 'descricao', 'desconto', 'validade', 'ativo', 'produto']\n# Pagamento\nclass PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    total = serializers.SerializerMethodField()\n    class Meta:",
         "detail": "pedidos.serializers",
         "documentation": {}
     },
@@ -461,7 +550,7 @@
         "kind": 6,
         "importPath": "pedidos.serializers",
         "description": "pedidos.serializers",
-        "peekOfCode": "class PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    class Meta:\n        model = Pagamento\n        fields = ['id_pagamento', 'pedido', 'valor', 'data', 'status']\n# Fidelizacao\nclass FidelizacaoSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(read_only=True)\n    class Meta:\n        model = Fidelizacao",
+        "peekOfCode": "class PagamentoSerializer(serializers.ModelSerializer):\n    pedido = PedidoSerializer(read_only=True)\n    total = serializers.SerializerMethodField()\n    class Meta:\n        model = Pagamento\n        fields = ['id_pagamento', 'pedido', 'valor', 'data', 'status', 'total']\n    def get_total(self, obj):\n        return obj.pedido.calcularTotal()\n# Fidelizacao\nclass FidelizacaoSerializer(serializers.ModelSerializer):",
         "detail": "pedidos.serializers",
         "documentation": {}
     },
@@ -715,6 +804,15 @@
         "description": "manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pedidos_api.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "manage",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 2,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "def run():\n    # Usuários\n    usuarios = [\n        Usuario(id_usuario=123, nome=\"Alex Teste\", email=\"alex@teste.com\", perfil=\"CLIENTE\"),\n        Usuario(id_usuario=124, nome=\"Uninter Alex\", email=\"uninter@teste.com\", perfil=\"CLIENTE\"),\n        Usuario(id_usuario=125, nome=\"Projeto Alex\", email=\"projeto@teste.com\", perfil=\"CLIENTE\"),\n    ]\n    Usuario.objects.bulk_create(usuarios, ignore_conflicts=True)\n    # Unidades\n    unidades = [",
+        "detail": "seed",
         "documentation": {}
     }
 ]

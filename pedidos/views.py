@@ -18,7 +18,7 @@ class PedidoViewSet(viewsets.ModelViewSet):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        canalPedido = serializer.validated_data.get("canal")
+        canalPedido = serializer.validated_data.get("canalPedido")
         clienteId = request.data.get("clienteId")
 
         try:
@@ -32,7 +32,7 @@ class PedidoViewSet(viewsets.ModelViewSet):
         # Criar pedido
         pedido = Pedido.objects.create(
             usuario=usuario,
-            canal=canalPedido,
+            canalPedido=canalPedido,
             status="AGUARDANDO_PAGAMENTO"
         )
 

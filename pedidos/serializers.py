@@ -42,10 +42,14 @@ class ItemPedidoSerializer(serializers.ModelSerializer):
 class PedidoSerializer(serializers.ModelSerializer):
     usuario = UsuarioSerializer(read_only=True)
     itens = ItemPedidoSerializer(many=True, read_only=True)
+    total = serializers.SerializerMethodField()
 
     class Meta:
         model = Pedido
-        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens']
+        fields = ['id_pedido', 'usuario', 'data', 'status', 'canalPedido', 'itens', 'total']
+
+    def get_total(self, obj):
+        return obj.calcularTotal()
 
 
 # Pedido (entrada para criação)
@@ -76,10 +80,14 @@ class PromocaoSerializer(serializers.ModelSerializer):
 # Pagamento
 class PagamentoSerializer(serializers.ModelSerializer):
     pedido = PedidoSerializer(read_only=True)
+    total = serializers.SerializerMethodField()
 
     class Meta:
         model = Pagamento
-        fields = ['id_pagamento', 'pedido', 'valor', 'data', 'status']
+        fields = ['id_pagamento', 'pedido', 'valor', 'data', 'status', 'total']
+
+    def get_total(self, obj):
+        return obj.pedido.calcularTotal()
 
 
 # Fidelizacao
