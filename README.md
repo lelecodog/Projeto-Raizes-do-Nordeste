@@ -27,9 +27,9 @@ esta implementação visa demostrar apenas o funcionamento do fluxo de pedidos.
 Crie um arquivo `.env` baseado no exemplo abaixo (`.env.example`):
 
 env
-SECRET_KEY=chave_super_secreta
-DEBUG=True
-DATABASE_URL=sqlite:///db.sqlite3
+- SECRET_KEY=chave_super_secreta
+- DEBUG=True
+- DATABASE_URL=sqlite:///db.sqlite3
 
 - cp .env.example .env
 
