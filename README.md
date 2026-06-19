@@ -70,21 +70,59 @@ http://127.0.0.1:8000/redoc/
 ## 7. Testes (Postman/Insomnia)
 
 A coleção de testes está disponível em:
-- [docs/API_Pedidos.postman_collection.json](docs/API_Pedidos.postman_collection.json)
+- [docs/API_Pedidos.postman_collection.json](Docs/API_Pedidos.postman_collection.json)
 
-Ordem sugerida:
+### Importação
+- No Postman: vá em *Collections* → *Import* → selecione o arquivo `.json`.
+- No Insomnia: vá em *Application Menu* → *Import Data* → *From File* → selecione o `.json`.
 
-Login (mock) → obter token.
+O token JWT obtido no login deve ser usado em todas as requisições (exceto nos cenários de erro sem token).
 
-Criar pedido (POST /pedidos).
+### Ordem sugerida de execução (Fluxo A)
 
-Consultar pedido (GET /pedidos/{id}).
+1. **[T01 - Login](ca://s?q=T01_Login)**  
+   - `POST /auth/login/`  
+   - Obter token JWT para autenticação.
 
-Atualizar status (PATCH /pedidos/{id}/status).
+2. **[T02 - Criar Pedido](ca://s?q=T02_Criar_Pedido)**  
+   - `POST /pedidos/`  
+   - Criar pedido com itens válidos.
 
-Simular pagamento (POST /pagamentos).
+3. **[T03 - Consultar Pedidos](ca://s?q=T03_Consultar_Pedidos)**  
+   - `GET /pedidos/`  
+   - Listar pedidos do usuário autenticado.
 
-Cenários de erro (ex.: produto inexistente, canalPedido inválido).
+4. **[T04 - Consultar sem Token](ca://s?q=T04_Acesso_sem_Token)** *(Erro)*  
+   - `GET /pedidos/` sem `Authorization`.  
+   - Esperado: `401 Unauthorized`.
+
+5. **[T05 - Simular Pagamento](ca://s?q=T05_Simular_Pagamento)**  
+   - `POST /pedidos/simular_pagamento/`  
+   - Confirmar pagamento mock.
+
+6. **[T06 - Atualizar Status](ca://s?q=T06_Atualizar_Status)**  
+   - `PATCH /pedidos/{id}/atualizar_status/`  
+   - Alterar status para `EM_PREPARO`, `FINALIZADO` ou `CANCELADO`.
+
+7. **[T07 - Criar Pedido com Cliente Inexistente](ca://s?q=T07_Criar_Pedido_com_Cliente_Inexistente)** *(Erro)*  
+   - `POST /pedidos/` com `clienteId` inválido.  
+   - Esperado: `400 Bad Request`.
+
+8. **[T08 - Criar Pedido com Produto Inexistente](ca://s?q=T08_Produto_inexistente_no_pedido)** *(Erro)*  
+   - `POST /pedidos/` com `produtoId` inválido.  
+   - Esperado: `400 Bad Request`.
+
+9. **[T09 - Simular Pagamento já efetuado](ca://s?q=T09_Simular_pagamento_ja_efetuado)** *(Erro)*  
+   - `POST /pedidos/simular_pagamento/` em pedido já pago.  
+   - Esperado: `409 Conflict`.
+
+10. **[T10 - Consultar Pedido sem Token](ca://s?q=T10_Consultar_Pedido_sem_Token)** *(Erro)*  
+    - `GET /pedidos/{id}/` sem `Authorization`.  
+    - Esperado: `401 Unauthorized`.
+
+### Evidências
+- Prints da execução dos testes estão disponíveis em `docs/evidencias.pdf`.
+- Cada pasta (Auth, Produtos, Pedidos, Pagamento, Erros) contém os cenários positivos e negativos.
 
 ## 8. Fluxo obrigatório (Fluxo A)
 
