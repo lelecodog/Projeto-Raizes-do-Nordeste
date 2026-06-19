@@ -1,0 +1,235 @@
+{
+  "info": {
+    "_postman_id": "78661b6a-476c-42ce-8eb4-226f34436875",
+    "name": "API Pedidos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39207991",
+    "_collection_link": "https://go.postman.co/collection/39207991-78661b6a-476c-42ce-8eb4-226f34436875?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Autenticacao",
+      "item": [
+        {
+          "name": "T01 - Login Valido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "pm.environment.set(\"access_token\", jsonData.access);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"alex@teste.com\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "login",
+                ""
+              ]
+            },
+            "description": "## T01 - Login Válido\n\nVerifica o fluxo de autenticação com credenciais válidas.\n\n### Objetivo\n\nValidar que a API de autenticação retorna um token de acesso quando o usuário informa e-mail e senha corretos.\n\n### Pré-condições\n\n- O usuário deve estar cadastrado no sistema.\n    \n- As credenciais utilizadas devem ser válidas e ativas.\n    \n\n### Parâmetros esperados\n\n| Campo | Tipo | Obrigatório | Descrição |\n| --- | --- | --- | --- |\n| email | string | Sim | E-mail do usuário cadastrado |\n| password | string | Sim | Senha do usuário |\n\n### Resultado esperado\n\n- **Status HTTP:** `200 OK`\n    \n- **Corpo da resposta:** deve conter um token de autenticação (ex.: `access_token` ou `token`).\n    \n- Os testes devem validar que o token está presente e não está vazio.\n    \n\n### Observações\n\n- Este teste faz parte do conjunto de testes de autenticação da **API Pedidos**.\n    \n- O token retornado pode ser armazenado em uma variável de ambiente para ser reutilizado nos demais testes da coleção."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "T02 - Criar Pedido Valido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pedidos/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "pedidos",
+                ""
+              ]
+            },
+            "description": "## T02 - Criar Pedido Válido\n\nVerifica o fluxo de criação de um novo pedido com dados válidos e usuário autenticado.\n\n### Objetivo\nValidar que a API aceita a criação de um pedido quando o usuário está autenticado e os dados enviados são válidos, retornando os dados do pedido criado.\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- A variável de ambiente `access_token` deve estar preenchida.\n\n### Autenticação\n| Header        | Valor                        |\n|---------------|------------------------------|\n| Authorization | Bearer {{access_token}}      |\n\n### Parâmetros esperados\nEnviar no corpo da requisição (JSON) os dados do pedido. Exemplo:\n\n```json\n{\n  \"produto\": \"Nome do produto\",\n  \"quantidade\": 1,\n  \"preco\": 99.90\n}\n```\n\n### Resultado esperado\n- **Status HTTP:** `201 Created`\n- **Corpo da resposta:** deve conter os dados do pedido criado, incluindo o `id` gerado.\n- Os testes devem validar que o status é 201 e que o `id` do pedido está presente na resposta.\n\n### Observações\n- Este teste depende da execução prévia do **T01 - Login Válido** para que o token esteja disponível.\n- Faz parte do conjunto de testes da pasta **Pedidos** da coleção **API Pedidos**."
+          },
+          "response": []
+        },
+        {
+          "name": "T03 - Consultar Pedidos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/pedidos/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "pedidos",
+                ""
+              ]
+            },
+            "description": "## T03 - Consultar Pedidos\n\nVerifica o fluxo de listagem de pedidos com usuário autenticado.\n\n### Objetivo\nValidar que a API retorna a lista de pedidos do usuário autenticado com status HTTP 200.\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- A variável de ambiente `access_token` deve estar preenchida.\n\n### Autenticação\n| Header        | Valor                   |\n|---------------|-------------------------|\n| Authorization | Bearer {{access_token}} |\n\n### Resultado esperado\n- **Status HTTP:** `200 OK`\n- **Corpo da resposta:** lista (array) de pedidos do usuário autenticado.\n- Os testes devem validar que o status é 200 e que a resposta é um array.\n\n### Observações\n- Este teste depende da execução prévia do **T01 - Login Válido**.\n- Faz parte do conjunto de testes da pasta **Pedidos** da coleção **API Pedidos**."
+          },
+          "response": []
+        },
+        {
+          "name": "T04 - Acesso sem Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T04 - Acesso sem Token\n\nVerifica o comportamento da API quando uma requisição é feita sem token de autenticação.\n\n### Objetivo\nValidar que a API rejeita o acesso a endpoints protegidos quando nenhum token é fornecido, retornando o status HTTP adequado (401 Unauthorized).\n\n### Pré-condições\n- Nenhum token de autenticação deve ser enviado no header da requisição.\n\n### Autenticação\nNenhuma — requisição enviada sem o header `Authorization`.\n\n### Resultado esperado\n- **Status HTTP:** `401 Unauthorized`\n- **Corpo da resposta:** mensagem de erro indicando que a autenticação é necessária.\n- Os testes devem validar que o status é 401.\n\n### Observações\n- Este é um teste de segurança que garante que endpoints protegidos não são acessíveis sem autenticação.\n- Faz parte do conjunto de testes da pasta **Pedidos** da coleção **API Pedidos**."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pagamentos",
+      "item": [
+        {
+          "name": "T05 - Simular Pagamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T05 - Simular Pagamento\n\nVerifica o fluxo de simulação de pagamento de um pedido existente.\n\n### Objetivo\n\nValidar que a API processa corretamente a simulação de pagamento para um pedido válido, retornando confirmação do pagamento.\n\n### Pré-condições\n\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n    \n- Um pedido deve ter sido criado previamente (via **T02 - Criar Pedido Válido**).\n    \n- A variável de ambiente `access_token` deve estar preenchida.\n    \n\n### Autenticação\n\n| Header | Valor |\n| --- | --- |\n| Authorization | Bearer {{access_token}} |\n\n### Resultado esperado\n\n- **Status HTTP:** `200 OK`\n    \n- **Corpo da resposta:** confirmação do pagamento simulado com os dados do pedido.\n    \n- Os testes devem validar que o status é 200 e que a resposta contém a confirmação do pagamento.\n    \n\n### Observações\n\n- Este teste depende da execução prévia de **T01** e **T02**.\n    \n- Faz parte do conjunto de testes da pasta **Pagamentos** da coleção **API Pedidos**."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Status",
+      "item": [
+        {
+          "name": "T06 - Atualizar Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T06 - Atualizar Status\n\nVerifica o fluxo de atualização do status de um pedido existente.\n\n### Objetivo\nValidar que a API permite atualizar o status de um pedido com dados válidos e usuário autenticado.\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- Um pedido deve ter sido criado previamente (via **T02 - Criar Pedido Válido**).\n- A variável de ambiente `access_token` deve estar preenchida.\n\n### Autenticação\n| Header        | Valor                   |\n|---------------|-------------------------|\n| Authorization | Bearer {{access_token}} |\n\n### Parâmetros esperados\n| Campo  | Tipo   | Obrigatório | Descrição                        |\n|--------|--------|-------------|----------------------------------|\n| status | string | Sim         | Novo status do pedido (ex: \"pago\", \"enviado\", \"cancelado\") |\n\n### Resultado esperado\n- **Status HTTP:** `200 OK`\n- **Corpo da resposta:** dados do pedido com o status atualizado.\n- Os testes devem validar que o status HTTP é 200 e que o campo `status` foi atualizado corretamente.\n\n### Observações\n- Este teste depende da execução prévia de **T01** e **T02**.\n- Faz parte do conjunto de testes da pasta **Status** da coleção **API Pedidos**."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Erros",
+      "item": [
+        {
+          "name": "T07 - Criar Pedido Cliente Invalido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T07 - Criar Pedido Cliente Inválido\n\nVerifica o comportamento da API ao tentar criar um pedido com dados de cliente inválidos.\n\n### Objetivo\nValidar que a API rejeita a criação de um pedido quando os dados do cliente são inválidos ou inexistentes, retornando o status HTTP adequado (400 Bad Request ou 404 Not Found).\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- A variável de ambiente `access_token` deve estar preenchida.\n- Os dados do cliente enviados devem ser inválidos (ex.: ID de cliente inexistente).\n\n### Autenticação\n| Header        | Valor                   |\n|---------------|-------------------------|\n| Authorization | Bearer {{access_token}} |\n\n### Resultado esperado\n- **Status HTTP:** `400 Bad Request` ou `404 Not Found`\n- **Corpo da resposta:** mensagem de erro descrevendo o problema com os dados do cliente.\n- Os testes devem validar que o status indica erro e que a resposta contém uma mensagem de erro.\n\n### Observações\n- Este é um teste de validação de dados que garante que a API trata corretamente entradas inválidas.\n- Faz parte do conjunto de testes da pasta **Erros** da coleção **API Pedidos**."
+          },
+          "response": []
+        },
+        {
+          "name": "T08 - Produto inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T08 - Produto Inexistente\n\nVerifica o comportamento da API ao tentar criar um pedido com um produto que não existe no sistema.\n\n### Objetivo\nValidar que a API rejeita a criação de um pedido quando o produto informado não existe, retornando o status HTTP adequado (404 Not Found).\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- A variável de ambiente `access_token` deve estar preenchida.\n- O ID ou nome do produto enviado deve ser inexistente no sistema.\n\n### Autenticação\n| Header        | Valor                   |\n|---------------|-------------------------|\n| Authorization | Bearer {{access_token}} |\n\n### Resultado esperado\n- **Status HTTP:** `404 Not Found`\n- **Corpo da resposta:** mensagem de erro indicando que o produto não foi encontrado.\n- Os testes devem validar que o status é 404 e que a resposta contém uma mensagem de erro.\n\n### Observações\n- Este é um teste de validação que garante que a API trata corretamente referências a produtos inexistentes.\n- Faz parte do conjunto de testes da pasta **Erros** da coleção **API Pedidos**."
+          },
+          "response": []
+        },
+        {
+          "name": "T09 - Erro Pagamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T09 - Erro Pagamento\n\nVerifica o comportamento da API quando ocorre um erro no processamento do pagamento.\n\n### Objetivo\nValidar que a API trata corretamente falhas no processamento de pagamento, retornando o status HTTP adequado e uma mensagem de erro descritiva.\n\n### Pré-condições\n- O usuário deve estar autenticado (token obtido via **T01 - Login Válido**).\n- Um pedido deve ter sido criado previamente.\n- A variável de ambiente `access_token` deve estar preenchida.\n- Os dados de pagamento enviados devem ser inválidos ou simular uma falha.\n\n### Autenticação\n| Header        | Valor                   |\n|---------------|-------------------------|\n| Authorization | Bearer {{access_token}} |\n\n### Resultado esperado\n- **Status HTTP:** `400 Bad Request` ou `422 Unprocessable Entity`\n- **Corpo da resposta:** mensagem de erro descrevendo a falha no pagamento.\n- Os testes devem validar que o status indica erro e que a resposta contém uma mensagem de erro.\n\n### Observações\n- Este é um teste de tratamento de erros que garante que falhas de pagamento são comunicadas corretamente.\n- Faz parte do conjunto de testes da pasta **Erros** da coleção **API Pedidos**."
+          },
+          "response": []
+        },
+        {
+          "name": "T10 - Consultar se Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "## T10 - Consultar sem Token\n\nVerifica o comportamento da API ao tentar consultar pedidos sem fornecer token de autenticação.\n\n### Objetivo\nValidar que a API rejeita consultas a endpoints protegidos quando nenhum token é fornecido, retornando o status HTTP 401 Unauthorized.\n\n### Pré-condições\n- Nenhum token de autenticação deve ser enviado no header da requisição.\n\n### Autenticação\nNenhuma — requisição enviada sem o header `Authorization`.\n\n### Resultado esperado\n- **Status HTTP:** `401 Unauthorized`\n- **Corpo da resposta:** mensagem de erro indicando que a autenticação é necessária.\n- Os testes devem validar que o status é 401.\n\n### Observações\n- Este é um teste de segurança complementar ao **T04**, focado no endpoint de consulta de pedidos.\n- Faz parte do conjunto de testes da pasta **Erros** da coleção **API Pedidos**."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}
