@@ -24,6 +24,7 @@ urlpatterns = [
     path('', lambda request: HttpResponseRedirect('/swagger/')),
     path('admin/', admin.site.urls),
     path('api/', include('pedidos.urls')),
+    path("api/", include("autenticacao.urls")),
 
     # Rotas Swagger e ReDoc
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

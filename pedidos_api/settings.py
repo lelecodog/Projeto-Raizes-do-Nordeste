@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8m$4a3p4o0-e=lq*6*ewtp=sc0ijc52i$1$cu#i0d1g8z86c_j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pedidos',
+    'autenticacao',
     'rest_framework',
     'drf_yasg',
 ]
@@ -129,3 +129,14 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # habilita interface web
     ]
 }
+
+AUTH_USER_MODEL = 'pedidos.Usuario'
+AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
+
+SIMPLE_JWT = {
+    "USER_ID_FIELD": "id_usuario",   # campo que identifica o usuário
+    "USER_ID_CLAIM": "user_id",      # nome da claim no token
+}
+
+DEBUG = True
+ALLOWED_HOSTS = ["*"]

@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth import authenticate
 from .models import (
     Usuario, Unidade, Produto, ItemPedido,
     Pedido, Promocao, Pagamento, Fidelizacao, LogAuditoria
@@ -57,15 +58,16 @@ class ItemPedidoInputSerializer(serializers.Serializer):
     produtoId = serializers.IntegerField()
     quantidade = serializers.IntegerField(default=1)
 
-class PedidoCreateSerializer(serializers.ModelSerializer):
+class PedidoCreateSerializer(serializers.Serializer):
     clienteId = serializers.IntegerField()
     canalPedido = serializers.CharField()
     formaPagamento = serializers.CharField(default="MOCK")
     itens = ItemPedidoInputSerializer(many=True)
 
-    class Meta:
-        model = Pedido
-        fields = ["clienteId", "canalPedido", "formaPagamento", "itens"]
+    def validate_clienteId(self, value):
+        if not Usuario.objects.filter(id_usuario=value).exists():
+            raise serializers.ValidationError("Cliente não encontrado.")
+        return value
 
 
 # Promocao
@@ -107,3 +109,17 @@ class LogAuditoriaSerializer(serializers.ModelSerializer):
         model = LogAuditoria
         fields = ['id_log', 'pedido', 'acao', 'timestamp', 'usuario_responsavel']
 
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        email = data.get("email")
+        password = data.get("password")
+
+        # autentica usando email
+        user = authenticate(request=self.context.get("request"), email=email, password=password)
+        if not user:
+            raise serializers.ValidationError("Credenciais inválidas")
+        data["user"] = user
+        return data

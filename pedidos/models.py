@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
 # Usuario (com perfis: cliente, atendente, gerente, admin)
-class Usuario(models.Model):
+class Usuario(AbstractUser):
     PERFIS = [
         ("CLIENTE", "Cliente"),
         ("ATENDENTE", "Atendente"),
@@ -11,19 +12,16 @@ class Usuario(models.Model):
         ("ADMIN", "Admin"),
     ]
 
+    username = None  
+
     id_usuario = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-    senha_hash = models.CharField(max_length=255)
     perfil = models.CharField(max_length=20, choices=PERFIS, default="CLIENTE")
 
-    def criarConta(self, senha):
-        self.senha_hash = make_password(senha)
-        self.save()
-        return self
+    email = models.EmailField(unique=True)
 
-    def autenticar(self, senha):
-        return check_password(senha, self.senha_hash)
+    USERNAME_FIELD = "email"   
+    REQUIRED_FIELDS = []       
 
     def atualizarPerfil(self, novoNome=None, novoEmail=None):
         if novoNome:

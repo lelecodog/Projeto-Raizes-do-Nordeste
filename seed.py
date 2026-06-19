@@ -11,11 +11,22 @@ from django.utils import timezone
 def run():
     # Usuários
     usuarios = [
-        Usuario(id_usuario=123, nome="Alex Teste", email="alex@teste.com", perfil="CLIENTE"),
-        Usuario(id_usuario=124, nome="Uninter Alex", email="uninter@teste.com", perfil="CLIENTE"),
-        Usuario(id_usuario=125, nome="Projeto Alex", email="projeto@teste.com", perfil="CLIENTE"),
+        {"nome": "Alex Teste", "email": "alex@teste.com", "perfil": "CLIENTE"},
+        {"nome": "Uninter Alex", "email": "uninter@teste.com", "perfil": "CLIENTE"},
+        {"nome": "Projeto Alex", "email": "projeto@teste.com", "perfil": "CLIENTE"},
     ]
-    Usuario.objects.bulk_create(usuarios, ignore_conflicts=True)
+
+    usuarios_objs = []
+
+    for u in usuarios:
+        usuario = Usuario(
+            nome=u["nome"],
+            email=u["email"],
+            perfil=u["perfil"],
+        )
+        usuario.set_password("123456")
+        usuario.save()
+        usuarios_objs.append(usuario)
 
     # Unidades
     unidades = [
@@ -34,9 +45,9 @@ def run():
     Produto.objects.bulk_create(produtos, ignore_conflicts=True)
 
     # Pedidos
-    pedido1 = Pedido.objects.create(usuario_id=123, canalPedido="TOTEM")
-    pedido2 = Pedido.objects.create(usuario_id=124, canalPedido="APP")
-    pedido3 = Pedido.objects.create(usuario_id=125, canalPedido="BALCAO")
+    pedido1 = Pedido.objects.create(usuario=usuarios_objs[0], canalPedido="TOTEM")
+    pedido2 = Pedido.objects.create(usuario=usuarios_objs[1], canalPedido="APP")
+    pedido3 = Pedido.objects.create(usuario=usuarios_objs[2], canalPedido="BALCAO")
 
     # Itens de pedidos
     ItemPedido.objects.create(pedido=pedido1, produto_id=10, quantidade=2, valor_unitario=12.50)
@@ -54,9 +65,9 @@ def run():
     Pagamento.objects.create(id_pagamento=3, pedido=pedido3, valor=0.00, data=timezone.now(), status="PENDENTE")
 
     # Fidelização
-    Fidelizacao.objects.create(id_fidelizacao=1, usuario_id=123, saldo_ponto=100, historico="Compra inicial")
-    Fidelizacao.objects.create(id_fidelizacao=2, usuario_id=124, saldo_ponto=50, historico="Promoção aplicada")
-    Fidelizacao.objects.create(id_fidelizacao=3, usuario_id=125, saldo_ponto=0, historico="Cadastro novo")
+    Fidelizacao.objects.create(usuario=usuarios_objs[0], saldo_ponto=100, historico="Compra inicial")
+    Fidelizacao.objects.create(usuario=usuarios_objs[1], saldo_ponto=50, historico="Promoção aplicada")
+    Fidelizacao.objects.create(usuario=usuarios_objs[2], saldo_ponto=0, historico="Cadastro novo")
 
     # Logs de auditoria
     LogAuditoria.objects.create(id_log=1, pedido=pedido1, acao="CRIACAO", timestamp=timezone.now(), usuario_responsavel="Sistema")
