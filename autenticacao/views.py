@@ -4,22 +4,16 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from datetime import timedelta
 from pedidos.models import Usuario
+from pedidos.serializers import LoginSerializer
+from drf_yasg.utils import swagger_auto_schema
 
 class LoginView(APIView):
+    @swagger_auto_schema(request_body=LoginSerializer)
     def post(self, request):
-        email = request.data.get("email")
-        senha = request.data.get("password")
+        serializer = LoginSerializer(data=request.data, context={"request": request})
+        serializer.is_valid(raise_exception=True)
+        usuario = serializer.validated_data["user"]
 
-        try:
-            usuario = Usuario.objects.get(email=email)
-        except Usuario.DoesNotExist:
-            return Response({"detail": "Usuário não encontrado"}, status=status.HTTP_404_NOT_FOUND)
-
-        # Verifica senha corretamente
-        if not usuario.check_password(senha):
-            return Response({"detail": "Senha incorreta"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Criar token manualmente usando id_usuario
         refresh = RefreshToken.for_user(usuario)
         refresh.set_exp(lifetime=timedelta(days=7))
 

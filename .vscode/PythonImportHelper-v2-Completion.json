@@ -296,6 +296,30 @@
         "documentation": {}
     },
     {
+        "label": "LoginSerializer",
+        "importPath": "pedidos.serializers",
+        "description": "pedidos.serializers",
+        "isExtraImport": true,
+        "detail": "pedidos.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "swagger_auto_schema",
+        "importPath": "drf_yasg.utils",
+        "description": "drf_yasg.utils",
+        "isExtraImport": true,
+        "detail": "drf_yasg.utils",
+        "documentation": {}
+    },
+    {
+        "label": "swagger_auto_schema",
+        "importPath": "drf_yasg.utils",
+        "description": "drf_yasg.utils",
+        "isExtraImport": true,
+        "detail": "drf_yasg.utils",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -401,14 +425,6 @@
         "description": "rest_framework.decorators",
         "isExtraImport": true,
         "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "swagger_auto_schema",
-        "importPath": "drf_yasg.utils",
-        "description": "drf_yasg.utils",
-        "isExtraImport": true,
-        "detail": "drf_yasg.utils",
         "documentation": {}
     },
     {
@@ -533,7 +549,7 @@
         "kind": 6,
         "importPath": "autenticacao.views",
         "description": "autenticacao.views",
-        "peekOfCode": "class LoginView(APIView):\n    def post(self, request):\n        email = request.data.get(\"email\")\n        senha = request.data.get(\"password\")\n        try:\n            usuario = Usuario.objects.get(email=email)\n        except Usuario.DoesNotExist:\n            return Response({\"detail\": \"Usuário não encontrado\"}, status=status.HTTP_404_NOT_FOUND)\n        # Verifica senha corretamente\n        if not usuario.check_password(senha):",
+        "peekOfCode": "class LoginView(APIView):\n    @swagger_auto_schema(request_body=LoginSerializer)\n    def post(self, request):\n        serializer = LoginSerializer(data=request.data, context={\"request\": request})\n        serializer.is_valid(raise_exception=True)\n        usuario = serializer.validated_data[\"user\"]\n        refresh = RefreshToken.for_user(usuario)\n        refresh.set_exp(lifetime=timedelta(days=7))\n        access = refresh.access_token\n        access.set_exp(lifetime=timedelta(minutes=30))",
         "detail": "autenticacao.views",
         "documentation": {}
     },
