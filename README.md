@@ -144,3 +144,9 @@ Finalidade: cadastro de cliente e execução de pedidos.
 Base legal: execução de contrato.
 
 Controles: autenticação JWT (documentada), perfis de acesso, hashing de senha, logs de auditoria (não implementados, apenas descritos).
+
+O sistema não coleta dados sensíveis como CPF, dados financeiros ou endereço completo, limitando-se a informações essenciais para execução do contrato.
+
+## 10. Finalizando
+
+Este projeto cumpre os requisitos mínimos da disciplina, entregando uma API funcional, documentada e testável. O Fluxo A foi implementado com persistência em banco, autenticação JWT e documentação técnica completa, simulando um cenário real de mercado.
